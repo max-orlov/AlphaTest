@@ -24,6 +24,7 @@ public class MainServlet extends HttpServlet {
          */
         Long boxId = null;
         String color = null;
+
         if (req.getParameter("box_id") != null) {
             boxId = Long.valueOf(req.getParameter("box_id"));
         }

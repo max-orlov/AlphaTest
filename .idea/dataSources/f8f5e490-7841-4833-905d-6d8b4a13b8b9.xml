@@ -101,8 +101,8 @@
       <Comment>standard public schema</Comment>
       <StateNumber>351</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionTimestamp>2020-05-11.05:03:12.624</IntrospectionTimestamp>
-      <IntrospectionStateNumber>199584</IntrospectionStateNumber>
+      <IntrospectionTimestamp>2020-05-15.18:39:24.922</IntrospectionTimestamp>
+      <IntrospectionStateNumber>199642</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -165,12 +165,12 @@
     <table id="26" parent="18" name="box">
       <ObjectId>25270</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>199584</StateNumber>
+      <StateNumber>199642</StateNumber>
     </table>
     <table id="27" parent="18" name="item">
       <ObjectId>25275</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>199584</StateNumber>
+      <StateNumber>199642</StateNumber>
     </table>
     <column id="28" parent="26" name="id">
       <Position>1</Position>
@@ -187,7 +187,7 @@
     </column>
     <index id="30" parent="26" name="box_pkey">
       <ObjectId>25273</ObjectId>
-      <StateNumber>199583</StateNumber>
+      <StateNumber>199642</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
@@ -219,7 +219,7 @@
     </column>
     <index id="35" parent="27" name="item_pkey">
       <ObjectId>25278</ObjectId>
-      <StateNumber>199584</StateNumber>
+      <StateNumber>199642</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>

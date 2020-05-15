@@ -21,7 +21,7 @@ import java.util.Set;
 
 public class XMLParser {
 
-    private static File file = new File("C:\\Users\\Макс\\IdeaProjects\\AlfaTest\\text.xml");
+    private static File file = new File("C:\\Users\\Макс\\IdeaProjects\\AlphaTest\\text.xml");
     private static Set<Integer> result = new HashSet<Integer>();
 
     private static List<Box> boxes = new ArrayList<>();
