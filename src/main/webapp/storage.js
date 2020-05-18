@@ -21,6 +21,9 @@ function getItems() {
     });
 }
 
-$('#getInfo').click(getItems);
+$('#getInfo').click(function () {
+    $('#answer').empty();
+    getItems()
+});
 
 
