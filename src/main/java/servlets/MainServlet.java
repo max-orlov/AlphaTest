@@ -19,9 +19,6 @@ public class MainServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("application/json;charset=UTF8");
 
-        /*
-         *Получение данных из БД
-         */
         Long boxId = null;
         String color = null;
 
