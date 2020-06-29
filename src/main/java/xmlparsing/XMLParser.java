@@ -30,10 +30,7 @@ public class XMLParser {
     public XMLParser() {
     }
 
-    /*
-     *Заполнение БД из XML файла
-     */
-    public static void DocParser() throws IOException, SAXException {
+    public static void docParsingAndSaveToDataBase() throws IOException, SAXException {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder documentBuilder = null;
         try {
@@ -96,68 +93,6 @@ public class XMLParser {
                 item.setBox(Long.valueOf(innerNode.getParentNode().getAttributes().getNamedItem("id").getNodeValue()));
                 items.add(item);
             }
-        }
-    }
-
-    /*
-     * Метод для получения результата из XML файла
-     */
-    public static Set<Integer> getResultSetFromXML(Integer boxId, String itemColor) throws IOException, SAXException {
-
-        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-        DocumentBuilder documentBuilder = null;
-        try {
-            documentBuilder = factory.newDocumentBuilder();
-        } catch (ParserConfigurationException e) {
-            e.printStackTrace();
-        }
-        Document document = documentBuilder.parse(file);
-
-        NodeList items;
-
-        if (boxId == null) {
-            items = document.getElementsByTagName("Item");
-            for (int i = 0; i < items.getLength(); i++) {
-                Node node = items.item(i);
-                NamedNodeMap attributes = node.getAttributes();
-                for (int j = 0; j < attributes.getLength(); j++) {
-                    if (attributes.item(j).getNodeValue().equals(itemColor)
-                            && node.getParentNode().getNodeName().equals("Storage")) {
-                        result.add(Integer.valueOf(node.getAttributes().getNamedItem("id").getNodeValue()));
-                    }
-                }
-            }
-        } else {
-            NodeList boxes = document.getElementsByTagName("Box");
-            Node box = null;
-            for (int i = 0; i < boxes.getLength(); i++) {
-                if (Integer.valueOf(boxes.item(i).getAttributes().getNamedItem("id").getNodeValue()).equals(boxId)) {
-                    box = boxes.item(i);
-                }
-            }
-
-            if (box.hasChildNodes()) {
-                getChildNodesDataFromXML(box.getChildNodes(), itemColor);
-            }
-        }
-        return result;
-    }
-
-    public static void getChildNodesDataFromXML(NodeList list, String itemColor) {
-
-        for (int i = 0; i < list.getLength(); i++) {
-            Node node = list.item(i);
-            if (node.getNodeType() == Node.ELEMENT_NODE && node.getNodeName().equals("Item")) {
-                NamedNodeMap attributes = node.getAttributes();
-                for (int j = 0; j < attributes.getLength(); j++) {
-                    Node attr = attributes.item(j);
-                    if (attr.getNodeValue().equals(itemColor)) {
-                        result.add(Integer.valueOf(node.getAttributes().getNamedItem("id").getNodeValue()));
-                    }
-                }
-            }
-            if (node.hasChildNodes())
-                getChildNodesDataFromXML(node.getChildNodes(), itemColor);
         }
     }
 
